@@ -1,4 +1,4 @@
-package br.edu.ifpb.ads.padroes.atv1.rpg;
+package br.edu.ifpb.ads.padroes.atv1.rpg.models;
 
 public class Personagem {
 
@@ -30,7 +30,6 @@ public class Personagem {
         this.habilidades = habilidades;
     }
 
-    // Getters e Setters básicos
     public String getNome() {
         return nome;
     }

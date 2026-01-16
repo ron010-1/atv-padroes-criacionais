@@ -1,5 +1,9 @@
 package br.edu.ifpb.ads.padroes.atv1.rpg;
 
+import br.edu.ifpb.ads.padroes.atv1.rpg.models.Arma;
+import br.edu.ifpb.ads.padroes.atv1.rpg.models.Armadura;
+import br.edu.ifpb.ads.padroes.atv1.rpg.models.Personagem;
+
 public class CriadorPersonagem {
 
     public static Personagem criarPersonagem(String nome, String raca, String classe) {
@@ -129,7 +133,6 @@ public class CriadorPersonagem {
                     new Armadura("Armadura do Rei", 30, "Pesada"),
                     new String[]{"Investida", "Bloqueio", "Liderança"});
         }
-
         return base;
     }
 
