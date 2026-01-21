@@ -1,6 +1,6 @@
 package br.edu.ifpb.ads.padroes.atv1.rpg.models;
 
-public class Personagem {
+public class Personagem implements Cloneable {
 
     private String nome;
     private String raca;
@@ -30,49 +30,34 @@ public class Personagem {
         this.habilidades = habilidades;
     }
 
-    public String getNome() {
-        return nome;
+    @Override
+    public Personagem clone() {
+        return new Personagem(
+                this.nome,
+                this.raca,
+                this.classe,
+                this.forca,
+                this.inteligencia,
+                this.agilidade,
+                this.vida,
+                this.mana,
+                this.arma,
+                this.armadura,
+                this.habilidades.clone()
+        );
     }
 
-    public String getRaca() {
-        return raca;
-    }
-
-    public String getClasse() {
-        return classe;
-    }
-
-    public int getForca() {
-        return forca;
-    }
-
-    public int getInteligencia() {
-        return inteligencia;
-    }
-
-    public int getAgilidade() {
-        return agilidade;
-    }
-
-    public int getVida() {
-        return vida;
-    }
-
-    public int getMana() {
-        return mana;
-    }
-
-    public Arma getArma() {
-        return arma;
-    }
-
-    public Armadura getArmadura() {
-        return armadura;
-    }
-
-    public String[] getHabilidades() {
-        return habilidades;
-    }
+    public String getNome() { return nome; }
+    public String getRaca() { return raca; }
+    public String getClasse() { return classe; }
+    public int getForca() { return forca; }
+    public int getInteligencia() { return inteligencia; }
+    public int getAgilidade() { return agilidade; }
+    public int getVida() { return vida; }
+    public int getMana() { return mana; }
+    public Arma getArma() { return arma; }
+    public Armadura getArmadura() { return armadura; }
+    public String[] getHabilidades() { return habilidades; }
 
     public void setNome(String nome) {
         this.nome = nome;
@@ -80,8 +65,9 @@ public class Personagem {
 
     @Override
     public String toString() {
-        return String.format("%s - %s %s (F:%d, I:%d, A:%d, V:%d, M:%d)",
-                nome, raca, classe, forca, inteligencia, agilidade, vida, mana);
+        return String.format(
+                "%s - %s %s (F:%d, I:%d, A:%d, V:%d, M:%d)",
+                nome, raca, classe, forca, inteligencia, agilidade, vida, mana
+        );
     }
-
 }
